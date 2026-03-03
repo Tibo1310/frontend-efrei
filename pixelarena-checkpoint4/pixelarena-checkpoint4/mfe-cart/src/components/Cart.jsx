@@ -8,16 +8,16 @@ function Cart() {
   // useEffect 1 : ecoute cart:add et ajoute le produit au state
   useEffect(() => {
     const unsub = eventBus.on('cart:add', (product) => {
-      setItems(prev => [...prev, product]);
+      setItems(prev => [...prev, { ...product, cartId: Date.now() }]);
     });
-    return unsub;
+    return () => unsub();
   }, []);
 
-  // useEffect 2 : quand lezs items changent => notifie l'eventBus
+  // useEffect 2 : quand les items changent => notifie l'eventBus
   useEffect(() => {
     if (items.length === 0) return;
     const total = items.reduce((sum, item) => sum + item.price, 0);
-    eventBus.emit('cart:updated', { count: items.length, total: parseFloat(total.toFixed(2)) });
+    eventBus.emit('cart:updated', { count: items.length, total });
   }, [items]);
 
   const total = items.reduce((sum, item) => sum + item.price, 0);
@@ -38,9 +38,10 @@ function Cart() {
         <>
           <ul className="cart-list">
             {items.map((item, index) => (
-              <li key={index} className="cart-item">
+              <li key={item.cartId} className="cart-item">
                 <span className="cart-item-name">{item.name}</span>
                 <span className="cart-item-price">{item.price} €</span>
+                <button onClick={() => handleRemove(item.cartId)}>✕</button>
               </li>
             ))}
           </ul>
