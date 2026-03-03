@@ -1,0 +1,86 @@
+.catalog {
+  background: #1a1a2e;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.catalog-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.catalog-header h2 {
+  font-size: 20px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.mfe-badge {
+  background: #6c5ce7;
+  color: white;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.product-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #252542;
+  padding: 14px 16px;
+  border-radius: 12px;
+  transition: transform 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-2px);
+}
+
+.product-emoji {
+  font-size: 28px;
+  width: 40px;
+  text-align: center;
+}
+
+.product-info {
+  flex: 1;
+}
+
+.product-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 4px;
+}
+
+.product-price {
+  font-size: 13px;
+  color: #10b981;
+  font-weight: 500;
+}
+
+.add-btn {
+  background: #6c5ce7;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.add-btn:hover {
+  background: #5a4bd1;
+}

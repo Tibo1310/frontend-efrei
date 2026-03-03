@@ -7,11 +7,11 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[contenthash].js',
-    publicPath: 'http://localhost:3000/',
+    publicPath: 'http://localhost:3003/',
     clean: true,
   },
   devServer: {
-    port: 3000,
+    port: 3003,
     hot: true,
     historyApiFallback: true,
     headers: {
@@ -44,12 +44,15 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'shell',
-      remotes: {
-        mfeHeader: 'mfeHeader@http://localhost:3001/remoteEntry.js',
-        mfeLobby: 'mfeLobby@http://localhost:3002/remoteEntry.js',
-        mfeCatalog: 'mfeCatalog@http://localhost:3003/remoteEntry.js',
+      // TODO 1: name
+      name: 'mfeCatalog',
+      // TODO 2: filename
+      filename: 'remoteEntry.js',
+      // TODO 3: exposes
+      exposes: {
+        './Catalog': './src/components/Catalog',
       },
+      // TODO 4: shared
       shared: {
         react: { singleton: true, requiredVersion: '^18.2.0' },
         'react-dom': { singleton: true, requiredVersion: '^18.2.0' },
