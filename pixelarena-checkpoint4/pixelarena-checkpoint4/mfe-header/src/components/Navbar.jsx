@@ -9,7 +9,13 @@ function Navbar() {
     const unsub = eventBus.on('game:joined', () => {
       setNotifications(n => n + 1);
     });
-    return unsub;
+    const unsubCart = eventBus.on('cart:add', () => {
+      setNotifications(n => n + 1);
+    });
+    return () => {
+      unsub();
+      unsubCart();
+    };
   }, []);
 
   return (
