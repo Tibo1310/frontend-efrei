@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import './App.css';
 
-const Header = lazy(() => import('mfeHeader/./Navbar'));
+const Header = lazy(() => import('mfeHeader/Navbar'));
 function HeaderFallback() {
   return (
     <div className="header-loading">
