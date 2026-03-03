@@ -11,7 +11,7 @@ const GAMES = [
 
 function GameCard({ game }) {
   const handleJoinGame = () => {
-    // TODO: notifie l'eventBus que l'utilisateur a rejoint une partie
+    eventBus.emit('game:joined', { gameId: game.id, gameName: game.name });
 
     alert(`Vous avez rejoint : ${game.name}`);
   };

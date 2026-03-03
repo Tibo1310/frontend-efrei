@@ -6,8 +6,10 @@ function Navbar() {
   const [notifications, setNotifications] = useState(0);
 
   useEffect(() => {
-    // TODO: écoute l'événement 'game:joined' pour incrémenter le badge notifications
-    // Hint : eventBus.on() retourne une fonction — utilise-la pour le cleanup React
+    const unsub = eventBus.on('game:joined', () => {
+      setNotifications(n => n + 1);
+    });
+    return unsub;
   }, []);
 
   return (
