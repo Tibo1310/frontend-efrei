@@ -15,7 +15,6 @@ function Cart() {
 
   // useEffect 2 : quand les items changent => notifie l'eventBus
   useEffect(() => {
-    if (items.length === 0) return;
     const total = items.reduce((sum, item) => sum + item.price, 0);
     eventBus.emit('cart:updated', { count: items.length, total });
   }, [items]);
