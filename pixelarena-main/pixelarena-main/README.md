@@ -43,8 +43,13 @@ Seul le bouton "JOIN" du Lobby devrait devenir vert.
 Apres avoir fait la modification, repondez a ces questions :
 
 1. Le bouton "JOIN" est-il devenu vert ?
+Oui
 2. Les autres boutons ont-ils change de couleur aussi ?
+Oui tous les boutons de l'app ont changé de couleur.
 3. Si oui, pourquoi selon vous ?
+Car que la classe .button est définie de manière globale dans Lobby.css`. 
+Elle s'applique à tous les éléments ayant cette classe dans toute l'appli, pas seulement dans le Lobby.
+On pourrait contrer ça en nommant plus spécifiquement la classe.
 
 ---
 
