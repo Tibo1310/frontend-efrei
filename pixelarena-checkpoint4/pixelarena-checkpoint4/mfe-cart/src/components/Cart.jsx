@@ -20,7 +20,11 @@ function Cart() {
   }, [items]);
 
   const total = items.reduce((sum, item) => sum + item.price, 0);
+const handleRemove = (cartId) => {
+    setItems(prev => prev.filter(item => item.cartId !== cartId));
+  };
 
+  
   return (
     <div className="cart">
       <div className="cart-header">
