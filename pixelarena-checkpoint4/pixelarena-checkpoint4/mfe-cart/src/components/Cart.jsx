@@ -19,6 +19,10 @@ function Cart() {
     eventBus.emit('cart:updated', { count: items.length, total });
   }, [items]);
 
+  const handleRemove = (cartId) => {
+    setItems(prev => prev.filter(item => item.cartId !== cartId));
+  };
+
   const total = items.reduce((sum, item) => sum + item.price, 0);
 
   return (
