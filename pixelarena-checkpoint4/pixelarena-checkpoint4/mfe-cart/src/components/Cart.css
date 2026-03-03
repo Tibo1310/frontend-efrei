@@ -1,0 +1,68 @@
+.cart {
+  background: #1a1a2e;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.cart-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.cart-header h2 {
+  color: #ffffff;
+  margin: 0;
+  font-size: 20px;
+}
+
+.mfe-badge {
+  background: #6c5ce7;
+  color: white;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.cart-count {
+  margin-left: auto;
+  color: #10b981;
+  font-size: 13px;
+}
+
+.cart-empty {
+  color: #a0a0b0;
+  font-size: 14px;
+}
+
+.cart-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  background: #252542;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.cart-item-price {
+  color: #10b981;
+  font-weight: 500;
+}
+
+.cart-total {
+  text-align: right;
+  color: #ffffff;
+  font-size: 15px;
+}
